@@ -36,7 +36,16 @@ Este proyecto es un **e-commerce amplifica** desarrollado en **Laravel**, que se
 
         cp .env.example .env
 
-    4. Configura tu conexión con WooCommerce en el archivo .env:
+    4. Configura tu conexión a la db y con WooCommerce en el archivo .env:
+
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=ecommerce_db
+        DB_USERNAME=root
+        DB_PASSWORD=
+
+        ...
 
         WOOCOMMERCE_STORE_URL=https://tu-tienda.com
         WOOCOMMERCE_CONSUMER_KEY=ck_****************
