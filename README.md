@@ -50,6 +50,11 @@ Este proyecto es un **e-commerce amplifica** desarrollado en **Laravel**, que se
 
         php artisan migrate --seed
 
+    7. Ejecuta servidor
+        
+        npm install && npm run dev 
+        php artisan serve
+        
 ## 📚 Endpoints Disponibles
     🔹 /products
     Devuelve una lista de productos recuperados desde WooCommerce.
