@@ -46,7 +46,7 @@ Este proyecto es un **e-commerce amplifica** desarrollado en **Laravel**, que se
 
         php artisan key:generate
 
-    6. (Opcional) Si tienes migraciones o datos locales:
+    6. Instala migraciones o datos locales:
 
         php artisan migrate --seed
 
@@ -54,6 +54,10 @@ Este proyecto es un **e-commerce amplifica** desarrollado en **Laravel**, que se
         
         npm install && npm run dev 
         php artisan serve
+
+
+    usuario  : admin@example.com
+    password : password
         
 ## 📚 Endpoints Disponibles
     🔹 /products
