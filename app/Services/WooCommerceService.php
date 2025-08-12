@@ -12,9 +12,9 @@ class WooCommerceService
     public function __construct()
     {
         $this->woocommerce = new Client(
-            config('woocommerce.store_url'),
-            config('woocommerce.consumer_key'),
-            config('woocommerce.consumer_secret'),
+            env('WOCOMMERCE_STORE_URL'),
+            env('WOCOMMERCE_CONSUMER_KEY'),
+            env('WOCOMMERCE_CONSUMER_SECRET'),
             [
                 'version' => 'wc/v3',
                 'verify_ssl' => false, // Solo para desarrollo
@@ -36,9 +36,9 @@ class WooCommerceService
     public function getOrders($days = 30, $params = [])
     {
         try {
-            $afterDate = date('Y-m-d', strtotime("-{$days} days"));
+            //$afterDate = date('Y-m-d', strtotime("-{$days} days"));
             $defaultParams = [
-                'after' => $afterDate,
+                //'after' => $afterDate,
                 'per_page' => 100,
                 'orderby' => 'date',
                 'order' => 'desc'

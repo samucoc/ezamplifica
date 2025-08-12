@@ -18,7 +18,13 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->sku }}</td>
                     <td>{{ $product->price }}</td>
-                    <td><img src="{{ $product->images[0]->src }}" alt="{{ $product->name }}" width="100"></td>
+                    <td>
+                        @if(!empty($product->images) && isset($product->images[0]->src))
+                            <img src="{{ $product->images[0]->src }}" alt="{{ $product->name }}" width="100">
+                        @else
+                            <img src="/images/no-image.png" alt="No image" width="100">
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>

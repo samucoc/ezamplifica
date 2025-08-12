@@ -15,11 +15,7 @@ class ECommerceController extends Controller
     public function __construct()
     {
         // Configura tus credenciales de WooCommerce aquí
-        $this->woocommerceService = new WooCommerceService(
-            config('woocommerce.store_url'),
-            config('woocommerce.consumer_key'),
-            config('woocommerce.consumer_secret')
-        );
+        $this->woocommerceService = new WooCommerceService();
     }
 
     public function index()
@@ -29,10 +25,10 @@ class ECommerceController extends Controller
     }
 
     public function orders()
-       {
-           $orders = $this->woocommerceService->getOrders();
-           return view('orders.index', compact('orders'));
-       }
+    {
+        $orders = $this->woocommerceService->getOrders();
+        return view('orders.index', compact('orders'));
+    }
 
     public function exportProducts()
     {
