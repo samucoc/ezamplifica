@@ -12,9 +12,9 @@ class WooCommerceService
     public function __construct()
     {
         $this->woocommerce = new Client(
-            env('WOCOMMERCE_STORE_URL'),
-            env('WOCOMMERCE_CONSUMER_KEY'),
-            env('WOCOMMERCE_CONSUMER_SECRET'),
+            config('woocommerce.store_url'),
+            config('woocommerce.consumer_key'),
+            config('woocommerce.consumer_secret'),
             [
                 'version' => 'wc/v3',
                 'verify_ssl' => false, // Solo para desarrollo

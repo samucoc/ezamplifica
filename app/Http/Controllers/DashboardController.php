@@ -22,12 +22,12 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         // Obtener filtros de la solicitud
-        $dateRange = $request->input('dateRange', 'last_30_days');
+        //$dateRange = $request->input('dateRange', 'last_30_days');
         $customerId = $request->input('customer', null);
         $status = $request->input('status', null);
 
         // Obtener órdenes con filtros aplicados
-        $orders = $this->woocommerceService->getOrders($dateRange, [
+        $orders = $this->woocommerceService->getOrders([
             'customer' => $customerId,
             'status' => $status,
         ]);

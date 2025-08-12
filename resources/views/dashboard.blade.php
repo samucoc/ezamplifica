@@ -139,10 +139,11 @@
                                             <tbody>
                                                 @foreach($recentOrders as $order)
                                                 <tr>
+
                                                     <td>{{ $order->id }}</td>
-                                                    <td>{{ $order->date->format('m/d/Y') }}</td>
-                                                    <td>{{ $order->customer_name }}</td>
-                                                    <td><span class="badge bg-{{ $order->status_badge }}">{{ $order->status }}</span></td>
+                                                    <td>{{ \Carbon\Carbon::parse($order->date_created)->format('m/d/Y')  }}</td>
+                                                    <td>{{ $order->billing->first_name }} {{ $order->billing->last_name }}</td>
+                                                    <td><span class="badge bg-{{ $order->status }}">{{ $order->status }}</span></td>
                                                     <td>${{ number_format($order->total, 2) }}</td>
                                                 </tr>
                                                 @endforeach
